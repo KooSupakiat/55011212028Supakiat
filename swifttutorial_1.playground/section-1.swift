@@ -6,7 +6,5 @@ totalTeam += 1
 let priceInferred = -19
 let priceInExplict:Int = -19
 
-
-
-
+123456789
 
