@@ -4,8 +4,8 @@ var totalTeam = tutorialTeam + editorialTeam
 
 totalTeam += 1
 
-let tutorialTeamInferred = 56
-let tutorialTeamExplicit: Int = 56
+let tutorialTeamInferred = -19
+let tutorialTeamExplicit: Int = -19
 
 let priceintInferred = -19
 let priceintExplicit:Int = -19
