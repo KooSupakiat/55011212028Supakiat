@@ -11,7 +11,10 @@ if airports.isEmpty{
 
 println("The airports dictionary contains\(airports.count) item")
 
-
+//update ค่า
+airports["LHR"] = "London"
+// the airport dictionary now contains 3 item
+airports
 
 
 
