@@ -22,6 +22,19 @@ if let oldValue = airports.updateValue("Dublin Tnternational", forKey: "DUB"){
 airports
 
 
+//ลบข้อมูลใน dictionary
+airports["APL"] = "Apple International"
+
+airports["APL"] = nil
+//คำสั่งในการลบ
+
+if let removedValue = airports.removeValueForKey("DUB"){
+    println("The removed airport's name is \(removedValue).")
+}else{
+    println("The airports dictionary dose not contain a value for DUB.")
+}//ลบข้อมูลจากkey
+
+
 
 
 
