@@ -20,5 +20,8 @@ let possibleTipsInferred = [0.5, 0.18, 0.20]
 let possibleTipExlicit:[Double] = [0.5, 0.18, 0.20]
 var numberOhItem = possibleTipsInferred.count
 
+possibleTipsInferred.isEmpty
+//ถ้าไม่มีข้อมูลฝน array จะเป็นค่า false
+
 
 
