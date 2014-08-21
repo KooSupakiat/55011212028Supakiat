@@ -23,5 +23,22 @@ var numberOhItem = possibleTipsInferred.count
 possibleTipsInferred.isEmpty
 //ถ้าไม่มีข้อมูลฝน array จะเป็นค่า false
 
+//เพิ่มค่าใน array
+shoppingList.insert("pizza", atIndex: 0)
+shoppingList
+
+shoppingList.append("Flour")
+shoppingList
+
+shoppingList[1...3] = ["Banana","Apple"]
+shoppingList
+
+//ลบข้อมูล
+let Flour = shoppingList.removeLast()
+let Apple = shoppingList.removeAtIndex(2)
+shoppingList
+
+shoppingList.removeLast()
+
 
 
