@@ -15,6 +15,10 @@ shoppingList[0] = "Six eggs"
 
 // เปลี่ยน var เป็น let จะไม่สามารถเปลี่ยนแปลงค่าได้
 
-
+//นับจำนวณข้อมูลในarray
 let possibleTipsInferred = [0.5, 0.18, 0.20]
+let possibleTipExlicit:[Double] = [0.5, 0.18, 0.20]
+var numberOhItem = possibleTipsInferred.count
+
+
 
