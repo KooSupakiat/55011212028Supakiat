@@ -16,6 +16,7 @@ class TipCalculator{
     func calcTipWithTipPct(tipPct:Double) -> Double{
         return subtotal * tipPct
     }
+    //(tipPct:Double)อันนี้เป็นค่าของพารามิเตอร์ ,-> Double เป็น type ของค่าที่ return 
     
     //1
     func returnPssibleTip() -> [Int: Double]{
@@ -36,4 +37,4 @@ class TipCalculator{
     }
 }
 let tipCalc = TipCalculator(total: 33.25, taxPct: 0.06)
-
+tipCalc.returnPssibleTip()
