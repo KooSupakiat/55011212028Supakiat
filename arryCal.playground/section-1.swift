@@ -5,6 +5,18 @@ class TipCalculator{
     let taxPct: Double
     let subtotal: Double
     
+    //3
+    init(total:Double, taxPct:Double){
+        self.total = total
+        self.taxPct = taxPct
+        subtotal = total / (taxPct + 1)
+    }
+    
+    //4
+    func calcTipWithTipPct(tipPct:Double) -> Double{
+        return subtotal * tipPct
+    }
+    
     //1
     func returnPssibleTip() -> [Int: Double]{
         let possibleTipInferred = [0.15, 0.18, 0.20]
@@ -13,13 +25,15 @@ class TipCalculator{
         
         //2
         var retval = [Int: Double]()
-        for possbleTip in possibleTipInferred{
-            let intPct = Int(possbleTip*100)
+        for possibleTip in possibleTipInferred{
+            let intPct = Int(possibleTip*100)
+            
+            //3
+            retval[intPct] = calcTipWithTipPct(possibleTip)
             
         }
-        
+        return retval
     }
-    return retval
-    
 }
-//let tipCalc = TipCalculator(total: 33.25, taxPct: 0.06)
+let tipCalc = TipCalculator(total: 33.25, taxPct: 0.06)
+
