@@ -29,6 +29,7 @@ class adduser{
 
 
 }
+//เรียกใช้
 let inputuser = adduser(user: "koo", passwd: "1234")
 inputuser.creatuser("koo", passwd: "1234")
 inputuser.creatuser("supakiat", passwd: "250")
