@@ -15,3 +15,14 @@ if airports.isEmpty{
     println("The airport dictionary is not empty.")
     println(airports)
 }
+
+airports["BKK"] = "Bangkok"
+
+
+if let oldValue = airports.updateValue("Dublin Tnternational", forKey: "DUB"){
+    println("THe old value for DUB was \(oldValue).")
+}
+
+
+
+
