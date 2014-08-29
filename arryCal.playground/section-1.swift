@@ -11,6 +11,7 @@ class TipCalculator{
         self.taxPct = taxPct
         subtotal = total / (taxPct + 1)
     }
+    //self ให้ total บอกว่าให้ตัวแปรในฟังชั่นนี้เท่ากับตัวแปรของคลาสถ้าไม่เหมือนให้ใช้แบบบรรทัดสุดท้าย
     
     //4
     func calcTipWithTipPct(tipPct:Double) -> Double{
