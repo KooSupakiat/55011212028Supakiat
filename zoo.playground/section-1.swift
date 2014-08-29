@@ -21,10 +21,21 @@ class foodanimal{
         food[animal] = change
         
     }
+    func newanimal(animal: String,change: String){
+        food[animal] = change
+        
+    }
+
+
+
+
 }
 let inputanimal = foodanimal(animal: "lion", change: "milk")
 inputanimal.findfood("lion")
 inputanimal.changefood("lion", change: "milk")
+inputanimal.newanimal("dog", change: "cat")
+
+
 
 
 
