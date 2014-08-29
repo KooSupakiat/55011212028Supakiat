@@ -15,17 +15,18 @@ var intarray = [Int]()
     
     intarray.removeLast()
     
-if (true){
-    
-}
-    
-    
-    
-    /////////////ชื่อ/////////////
-    var namearray = [String]()
+var namearray = [String]()
     namearray = ["Supakiat","kookee"]
     
     namearray += ["Jangpuangsee"]
     namearray += ["puipui"]
+
+if (true){
+    println("stdID\(intarray ) name \(namearray)")
+} 
     
+    
+    
+    /////////////ชื่อ/////////////
+       
     
