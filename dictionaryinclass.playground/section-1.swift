@@ -9,6 +9,9 @@ var airports: [String :String] = ["TYO": "TYO","DUB":"Dublin"]
 
 if airports.isEmpty{
     println("The airport dictionary is empty.")
+    
+    
 }else{
     println("The airport dictionary is not empty.")
+    println(airports)
 }
