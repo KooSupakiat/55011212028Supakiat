@@ -21,9 +21,10 @@ var namearray = [String]()
     namearray += ["Jangpuangsee"]
     namearray += ["puipui"]
 
-if (true){
-    println("stdID\(intarray ) -------- name \(namearray)")
-}
+    if (true){
+        println("stdID\(intarray ) -------- name \(namearray)")
+    }
+
     
     
     
