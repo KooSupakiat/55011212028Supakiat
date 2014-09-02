@@ -1,3 +1,4 @@
+//boolean
 let orangesAreOrange = true
 let turnipsAreDelicious = false
 
