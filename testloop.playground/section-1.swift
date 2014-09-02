@@ -38,4 +38,39 @@ do{
     imdo += 1
 } while imdo <= 12
 
+//for
+
+var first = 1
+println("startforround \(first)")
+for i in 0..<4 {
+    println("forround \(first)")
+    first += 1
+}
+
+var first2 = 1
+println("startfortwo \(first2)")
+for var i = 0; i < 4;++i {
+    println("forroundtwo \(first2)")
+    first2 += 1
+}
+
+var num = 2
+for i = 1;i <=12; ++i {
+    var av = num*i
+    println("\(num) * \(i) = \(av)")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
