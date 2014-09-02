@@ -18,4 +18,24 @@ while im <= 12{
     im = im+1
 }
 
+//do while
+
+var r = 1
+println("startdo \(r)")
+do {
+    println("rounddo \(r)")
+    r = r+1
+} while r < 5
+
+
+
+let mdo = 2
+var imdo = 1
+
+do{
+    var avdo = mdo*imdo
+    println("\(mdo) * \(imdo) = \(avdo)")
+    imdo += 1
+} while imdo <= 12
+
 
