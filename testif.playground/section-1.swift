@@ -18,3 +18,13 @@ if i==2{
 else{
     println("fales")
 }
+
+//string
+let str="kookee"
+
+if (equal(str, "kookee")){
+    println("I'm \(str)!")
+}
+else{
+    println("Who R U")
+}
