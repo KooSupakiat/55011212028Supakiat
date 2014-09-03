@@ -51,7 +51,10 @@ class Inputrusume{
         
         dicgrade[id] = grade
     }
-    func show
+    func show(){
+        
+        
+    }
    
 }
     
