@@ -55,7 +55,7 @@ for var i = 0; i < 4;++i {
 }
 
 var num = 2
-for i = 1;i <=12; ++i {
+for i = 1;i <= 12; ++i {
     var av = num*i
     println("\(num) * \(i) = \(av)")
 }
