@@ -43,7 +43,7 @@ do{
 var first = 1
 println("startforround \(first)")
 for i in 0..<4 {
-    println("forround \(first)")
+    println("forround \(first) i \(i)")
     first += 1
 }
 
@@ -58,6 +58,10 @@ var num = 2
 for i = 1;i <= 12; ++i {
     var av = num*i
     println("\(num) * \(i) = \(av)")
+}
+
+for i=5; i>=1;--i{
+    println("i : \(i)")
 }
 
 
