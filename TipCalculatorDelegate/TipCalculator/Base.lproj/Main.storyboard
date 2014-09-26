@@ -22,7 +22,7 @@
                                     <fragment content="Bill Total (Post-Tax):">
                                         <attributes>
                                             <color key="NSColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <rect key="frame" x="20" y="71" width="156" height="40"/>
+                                    <rect key="frame" x="20" y="71" width="106" height="40"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Fl-9b-Wwy">
@@ -39,7 +39,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <rect key="frame" x="189" y="71" width="159" height="30"/>
+                                    <rect key="frame" x="134" y="76" width="170" height="30"/>
                                 </variation>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hC-TJ-kmI">
@@ -48,46 +48,48 @@
                                     <fragment content="Tax Percentage (0%):">
                                         <attributes>
                                             <color key="NSColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="11" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="139" width="167" height="21"/>
+                                    <rect key="frame" x="20" y="139" width="106" height="21"/>
                                 </variation>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="4IT-0e-4ep">
-                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="187" y="130" width="163" height="31"/>
-                                </variation>
-                                <connections>
-                                    <action selector="taxPercentegeChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="qUq-63-Gc3"/>
-                                </connections>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erx-YW-raW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="163" y="180" width="75" height="30"/>
+                                    <rect key="frame" x="123" y="180" width="75" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="calculateTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jNE-Qp-A1h"/>
+                                    <action selector="calculateTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bNQ-Kr-b1C"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Supakiat Jangpuangsee" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLA-7J-puy">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wu9-M0-NLD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="218" width="360" height="128"/>
+                                    <rect key="frame" x="104" y="218" width="173" height="316"/>
                                 </variation>
-                            </textView>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="Xb0-kN-OY8"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="aUy-ff-0Hb"/>
+                                </connections>
+                            </tableView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="4IT-0e-4ep">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="132" y="124" width="174" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="taxPercentegeChanged:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f7g-z4-V8l"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
@@ -95,9 +97,9 @@
                                 <exclude reference="R6K-ZJ-cki"/>
                                 <exclude reference="6Fl-9b-Wwy"/>
                                 <exclude reference="9hC-TJ-kmI"/>
-                                <exclude reference="4IT-0e-4ep"/>
                                 <exclude reference="erx-YW-raW"/>
-                                <exclude reference="QLA-7J-puy"/>
+                                <exclude reference="Wu9-M0-NLD"/>
+                                <exclude reference="4IT-0e-4ep"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -105,28 +107,30 @@
                                 <include reference="R6K-ZJ-cki"/>
                                 <include reference="6Fl-9b-Wwy"/>
                                 <include reference="9hC-TJ-kmI"/>
-                                <include reference="4IT-0e-4ep"/>
                                 <include reference="erx-YW-raW"/>
-                                <include reference="QLA-7J-puy"/>
+                                <include reference="Wu9-M0-NLD"/>
+                                <include reference="4IT-0e-4ep"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IwR-je-Iyl"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="resultsTextView" destination="QLA-7J-puy" id="rRa-VH-am1"/>
-                        <outlet property="taxPctLabel" destination="9hC-TJ-kmI" id="02h-WH-SMf"/>
-                        <outlet property="taxPctSlider" destination="4IT-0e-4ep" id="Snr-9Q-RSW"/>
-                        <outlet property="totalTextField" destination="6Fl-9b-Wwy" id="jIS-ge-OzO"/>
+                        <outlet property="tableView" destination="Wu9-M0-NLD" id="sAf-5w-roK"/>
+                        <outlet property="taxPctLabel" destination="9hC-TJ-kmI" id="8cR-fa-BHk"/>
+                        <outlet property="taxPctSlider" destination="4IT-0e-4ep" id="UEw-lw-xlz"/>
+                        <outlet property="totalTextField" destination="6Fl-9b-Wwy" id="tix-PX-m7a"/>
+                        <outlet property="totallabel" destination="R6K-ZJ-cki" id="gju-dE-dvj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="XhS-v3-vON">
                     <connections>
-                        <action selector="viewTapped:" destination="vXZ-lx-hvc" id="TKF-1D-BQ0"/>
+                        <action selector="viewTapped:" destination="vXZ-lx-hvc" id="s8u-4V-iju"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="949.5" y="131"/>
+            <point key="canvasLocation" x="831" y="2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rBz-Ue-BR5">
