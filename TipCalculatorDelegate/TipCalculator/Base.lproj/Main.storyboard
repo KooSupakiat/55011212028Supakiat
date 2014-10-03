@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6K-ZJ-cki">
@@ -70,17 +70,6 @@
                                     <action selector="calculateTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bNQ-Kr-b1C"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wu9-M0-NLD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="104" y="218" width="173" height="316"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="Xb0-kN-OY8"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="aUy-ff-0Hb"/>
-                                </connections>
-                            </tableView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="4IT-0e-4ep">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -90,6 +79,17 @@
                                     <action selector="taxPercentegeChanged:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="f7g-z4-V8l"/>
                                 </connections>
                             </slider>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Wu9-M0-NLD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="29" y="218" width="264" height="316"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="Xb0-kN-OY8"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="aUy-ff-0Hb"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
@@ -98,8 +98,8 @@
                                 <exclude reference="6Fl-9b-Wwy"/>
                                 <exclude reference="9hC-TJ-kmI"/>
                                 <exclude reference="erx-YW-raW"/>
-                                <exclude reference="Wu9-M0-NLD"/>
                                 <exclude reference="4IT-0e-4ep"/>
+                                <exclude reference="Wu9-M0-NLD"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -108,8 +108,8 @@
                                 <include reference="6Fl-9b-Wwy"/>
                                 <include reference="9hC-TJ-kmI"/>
                                 <include reference="erx-YW-raW"/>
-                                <include reference="Wu9-M0-NLD"/>
                                 <include reference="4IT-0e-4ep"/>
+                                <include reference="Wu9-M0-NLD"/>
                             </mask>
                         </variation>
                     </view>

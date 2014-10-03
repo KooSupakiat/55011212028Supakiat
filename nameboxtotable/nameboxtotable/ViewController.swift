@@ -20,7 +20,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var nameInput: UITextField!
     
    
-    @IBAction func okButton(sender: UIButton) {
+    @IBAction func addButton(sender: UIButton) {
         
     }
     
