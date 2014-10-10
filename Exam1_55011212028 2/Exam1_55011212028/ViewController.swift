@@ -38,8 +38,8 @@ class ViewController: UIViewController ,UITableViewDelegate {
         let ten = numvolume * (numprice * (10/100))
        
         tabledata.append("ราคาหุ้นขึ้น 3% : กำไร \(three) บาท")
-        tabledata.append("ราคาหุ้นขึ้น 3% : กำไร \(five) บาท")
-        tabledata.append("ราคาหุ้นขึ้น 3% : กำไร \(ten) บาท")
+        tabledata.append("ราคาหุ้นขึ้น 5% : กำไร \(five) บาท")
+        tabledata.append("ราคาหุ้นขึ้น 10% : กำไร \(ten) บาท")
         print("....\(tabledata)")
         tableview.reloadData()
         
