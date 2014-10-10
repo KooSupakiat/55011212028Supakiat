@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F6D9BA219E7CFC40053163C /* photo.jpg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6D9BA119E7CFC40053163C /* photo.jpg.png */; };
+		3F6D9BA619E7D2BE0053163C /* Bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6D9BA319E7D2BE0053163C /* Bus.png */; };
+		3F6D9BA719E7D2BE0053163C /* Helicopter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6D9BA419E7D2BE0053163C /* Helicopter.png */; };
+		3F6D9BA819E7D2BE0053163C /* Truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6D9BA519E7D2BE0053163C /* Truck.png */; };
+		3F6D9BAA19E7D3B60053163C /* stock.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6D9BA919E7D3B60053163C /* stock.png */; };
+		3F6D9BAC19E7D58E0053163C /* iOS6_Wallpaper_Droidviews_4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F6D9BAB19E7D58E0053163C /* iOS6_Wallpaper_Droidviews_4.jpeg */; };
 		3F9114E919E7B24E0047C17E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9114E819E7B24E0047C17E /* AppDelegate.swift */; };
 		3F9114EB19E7B24E0047C17E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9114EA19E7B24E0047C17E /* ViewController.swift */; };
 		3F9114EE19E7B24E0047C17E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9114EC19E7B24E0047C17E /* Main.storyboard */; };
@@ -26,6 +32,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F6D9BA119E7CFC40053163C /* photo.jpg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.jpg.png; sourceTree = "<group>"; };
+		3F6D9BA319E7D2BE0053163C /* Bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bus.png; sourceTree = "<group>"; };
+		3F6D9BA419E7D2BE0053163C /* Helicopter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Helicopter.png; sourceTree = "<group>"; };
+		3F6D9BA519E7D2BE0053163C /* Truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Truck.png; sourceTree = "<group>"; };
+		3F6D9BA919E7D3B60053163C /* stock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stock.png; sourceTree = "<group>"; };
+		3F6D9BAB19E7D58E0053163C /* iOS6_Wallpaper_Droidviews_4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iOS6_Wallpaper_Droidviews_4.jpeg; sourceTree = "<group>"; };
 		3F9114E319E7B24E0047C17E /* Exam1_55011212028.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exam1_55011212028.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9114E719E7B24E0047C17E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9114E819E7B24E0047C17E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +102,12 @@
 		3F9114E619E7B24E0047C17E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F6D9BAB19E7D58E0053163C /* iOS6_Wallpaper_Droidviews_4.jpeg */,
+				3F6D9BA919E7D3B60053163C /* stock.png */,
+				3F6D9BA319E7D2BE0053163C /* Bus.png */,
+				3F6D9BA419E7D2BE0053163C /* Helicopter.png */,
+				3F6D9BA519E7D2BE0053163C /* Truck.png */,
+				3F6D9BA119E7CFC40053163C /* photo.jpg.png */,
 				3F9114E719E7B24E0047C17E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -192,8 +210,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6D9BAA19E7D3B60053163C /* stock.png in Resources */,
 				3F9114EE19E7B24E0047C17E /* Main.storyboard in Resources */,
+				3F6D9BA219E7CFC40053163C /* photo.jpg.png in Resources */,
 				3F9114F319E7B24E0047C17E /* LaunchScreen.xib in Resources */,
+				3F6D9BA619E7D2BE0053163C /* Bus.png in Resources */,
+				3F6D9BAC19E7D58E0053163C /* iOS6_Wallpaper_Droidviews_4.jpeg in Resources */,
+				3F6D9BA719E7D2BE0053163C /* Helicopter.png in Resources */,
+				3F6D9BA819E7D2BE0053163C /* Truck.png in Resources */,
 				3F9114F019E7B24E0047C17E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +429,7 @@
 				3F91150419E7B24E0047C17E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F91150519E7B24E0047C17E /* Build configuration list for PBXNativeTarget "Exam1_55011212028Tests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +438,7 @@
 				3F91150719E7B24E0047C17E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
