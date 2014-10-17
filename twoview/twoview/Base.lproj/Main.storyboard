@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="370.5" y="406.5"/>
         </scene>
-        <!--Color-->
+        <!--ViewController2-->
         <scene sceneID="M7X-5j-eSW">
             <objects>
-                <viewController title="Color" id="clT-Sb-7bE" sceneMemberID="viewController">
+                <viewController title="ViewController2" id="clT-Sb-7bE" customClass="colortwoviewController" customModule="twoview" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NGz-yv-WNF"/>
                         <viewControllerLayoutGuide type="bottom" id="qAe-Ls-bwm"/>
@@ -59,9 +59,59 @@
                     <view key="view" contentMode="scaleToFill" id="YdK-Vg-6Of">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zqe-AQ-MNo">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Iad-oV-IHV">
+                                        <barButtonItem key="rightBarButtonItem" title="color" id="D0H-w8-NTc">
+                                            <connections>
+                                                <action selector="savecolor:" destination="clT-Sb-7bE" id="hPG-xd-Xob"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcD-ys-G3J">
+                                <rect key="frame" x="16" y="270" width="46" height="30"/>
+                                <state key="normal" title="red">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="colorbutton:" destination="clT-Sb-7bE" eventType="touchUpInside" id="pQc-Zu-gbr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usc-Bn-MD0">
+                                <rect key="frame" x="164" y="270" width="46" height="30"/>
+                                <state key="normal" title="green">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="colorbutton:" destination="clT-Sb-7bE" eventType="touchUpInside" id="n8f-yX-Nav"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9l4-qB-QRO">
+                                <rect key="frame" x="313" y="270" width="46" height="30"/>
+                                <state key="normal" title="blue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="colorbutton:" destination="clT-Sb-7bE" eventType="touchUpInside" id="OMb-5q-snU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkG-CC-eoB">
+                                <rect key="frame" x="16" y="131" width="343" height="99"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="colorview" destination="BkG-CC-eoB" id="Eaz-6S-mCQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikN-SP-dd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

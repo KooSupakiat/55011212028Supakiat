@@ -9,7 +9,22 @@
 import UIKit
 
 class colortwoviewController: UIViewController {
+    
+    
+    
+    let colorstring = ""
 
+    @IBOutlet var colorview: UILabel!
+    
+    @IBAction func savecolor(sender: UIBarButtonItem) {
+    }
+    
+   
+    @IBAction func colorbutton(sender: UIButton) {
+        colorview.backgroundColor = getRandomColor()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +35,19 @@ class colortwoviewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getRandomColor() -> UIColor{
+        
+        var randomRed:CGFloat = CGFloat(drand48())
+        
+        var randomGreen:CGFloat = CGFloat(drand48())
+        
+        var randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+        
+    }
+    
     
 
     /*
