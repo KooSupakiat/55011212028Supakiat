@@ -29,6 +29,16 @@ class colortwoviewController: UIViewController {
    
     @IBAction func colorbutton(sender: UIButton) {
         colorview.text = sender.titleLabel!.text!
+        if(sender.titleLabel!.text!=="red"){
+            colorview.backgroundColor = UIColor.redColor()
+        }else if(sender.titleLabel!.text!=="green"){
+            colorview.backgroundColor = UIColor.greenColor()
+        }else if(sender.titleLabel!.text!=="blue"){
+            colorview.backgroundColor = UIColor.blueColor()
+        }
+        
+       
+        
         
     }
     

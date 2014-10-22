@@ -19,7 +19,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9iZ-xD-HBh">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="aZD-sx-vpQ">
+                                    <navigationItem title="One" id="aZD-sx-vpQ">
                                         <barButtonItem key="rightBarButtonItem" title="color" id="G5G-IU-elY">
                                             <connections>
                                                 <segue destination="clT-Sb-7bE" kind="show" identifier="mysegue" id="CBx-Ue-bNL"/>
@@ -63,7 +63,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zqe-AQ-MNo">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="Iad-oV-IHV">
+                                    <navigationItem title="Two" id="Iad-oV-IHV">
                                         <barButtonItem key="rightBarButtonItem" title="save" id="D0H-w8-NTc">
                                             <connections>
                                                 <action selector="savecolor:" destination="clT-Sb-7bE" id="hPG-xd-Xob"/>
