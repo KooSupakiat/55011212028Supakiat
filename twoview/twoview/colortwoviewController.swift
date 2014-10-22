@@ -7,21 +7,28 @@
 //
 
 import UIKit
+protocol colortwoviewControllerDelegate{
+    func myVCDidFinish(controller: colortwoviewController,text:String)
+}
 
 class colortwoviewController: UIViewController {
+    var delegate:colortwoviewControllerDelegate? = nil
     
-    
-    
-    let colorstring = ""
+    var colorstring = ""
 
     @IBOutlet var colorview: UILabel!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBAction func savecolor(sender: UIBarButtonItem) {
+        if(delegate != nil){
+           delegate!.myVCDidFinish(self, text: colorview!.text!)
+        }
     }
     
    
     @IBAction func colorbutton(sender: UIButton) {
-        colorview.backgroundColor = getRandomColor()
+        colorview.text = sender.titleLabel!.text!
         
     }
     
@@ -29,12 +36,10 @@ class colortwoviewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        colorview.text = colorstring
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func getRandomColor() -> UIColor{
         

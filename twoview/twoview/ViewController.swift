@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,colortwoviewControllerDelegate {
 
     @IBOutlet var colorlabel: UILabel!
     
@@ -17,6 +17,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    func myVCDidFinish(controller: colortwoviewController,text:String){
+        colorlabel.text = "Co" + text
+        controller.navigationController?.popViewControllerAnimated(true)
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "mySegue"{
+            let vc = segue.destinationViewController as colortwoviewController
+            vc.colorstring = colorlabel.text!
+            vc.delegate = self
+        }
+    }
+    
 
     
 
