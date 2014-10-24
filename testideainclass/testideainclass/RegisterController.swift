@@ -8,13 +8,18 @@
 
 import UIKit
 
-class RegisterController: UIViewController {
+class RegisterController: UIViewController ,UIImagePickerControllerDelegate{
 
     @IBOutlet var nameRegister: UITextField!
     @IBOutlet var passwordRegister: UITextField!
     @IBOutlet var repasswordRegister: UITextField!
     
     
+    @IBAction func chooseimage(sender: AnyObject) {
+        var pickerC = UIImagePickerController()
+        pickerC.delegate?
+        self.presentViewController(pickerC, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -15,6 +15,7 @@
 		3F3B824D19FA2A1A0066D2EE /* testideainclassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B824C19FA2A1A0066D2EE /* testideainclassTests.swift */; };
 		3F3B825719FA39140066D2EE /* colorful-flower-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F3B825619FA39140066D2EE /* colorful-flower-background.jpg */; };
 		3FC2BA0419FA4031009D5144 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2BA0319FA4031009D5144 /* RegisterController.swift */; };
+		3FC2BA0619FA5E8E009D5144 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2BA0519FA5E8E009D5144 /* data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		3F3B824C19FA2A1A0066D2EE /* testideainclassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testideainclassTests.swift; sourceTree = "<group>"; };
 		3F3B825619FA39140066D2EE /* colorful-flower-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "colorful-flower-background.jpg"; sourceTree = "<group>"; };
 		3FC2BA0319FA4031009D5144 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		3FC2BA0519FA5E8E009D5144 /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				3F3B823F19FA2A1A0066D2EE /* LaunchScreen.xib */,
 				3F3B823419FA2A1A0066D2EE /* Supporting Files */,
 				3FC2BA0319FA4031009D5144 /* RegisterController.swift */,
+				3FC2BA0519FA5E8E009D5144 /* data.swift */,
 			);
 			path = testideainclass;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				3F3B823919FA2A1A0066D2EE /* ViewController.swift in Sources */,
 				3F3B823719FA2A1A0066D2EE /* AppDelegate.swift in Sources */,
 				3FC2BA0419FA4031009D5144 /* RegisterController.swift in Sources */,
+				3FC2BA0619FA5E8E009D5144 /* data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
