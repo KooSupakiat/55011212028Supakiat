@@ -10,6 +10,11 @@ import UIKit
 
 class RegisterController: UIViewController {
 
+    @IBOutlet var nameRegister: UITextField!
+    @IBOutlet var passwordRegister: UITextField!
+    @IBOutlet var repasswordRegister: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
