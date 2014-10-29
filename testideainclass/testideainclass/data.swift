@@ -22,10 +22,12 @@ class data {
     
     func dataToArray (username:String, userpassword:String){
         
-        arraydata[username]=userpassword
+        arraydata.updateValue(userpassword  , forKey: username)
         println("data : \(arraydata)")
+        println(" count : \(arraydata.count)")
         
     }
+
     
     
     

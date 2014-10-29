@@ -17,6 +17,8 @@ class RegisterController: UIViewController ,UIImagePickerControllerDelegate{
     
     @IBAction func donebutton(sender: UIBarButtonItem) {
          let datainput = data(username:nameRegister.text, userpassword:passwordRegister.text)
+             datainput.dataToArray(nameRegister.text, userpassword: passwordRegister.text)
+        
         
     }
     
