@@ -15,16 +15,29 @@ class RegisterController: UIViewController ,UIImagePickerControllerDelegate{
     @IBOutlet var repasswordRegister: UITextField!
     
     
+    @IBAction func donebutton(sender: UIBarButtonItem) {
+         let datainput = data(username:nameRegister.text, userpassword:passwordRegister.text)
+        
+    }
+    
+    
     @IBAction func chooseimage(sender: AnyObject) {
         var pickerC = UIImagePickerController()
         pickerC.delegate?
         self.presentViewController(pickerC, animated: true, completion: nil)
     }
-    override func viewDidLoad() {
+    
+    
+    
+    
+    
+    
+    
+    /*override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
+    }*/
 
         
 

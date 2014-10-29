@@ -11,6 +11,8 @@ class data {
     
     var username: String
     var userpassword: String
+    var arraydata = Dictionary<String, String>()
+    
     
     
     init (username:String , userpassword:String){
@@ -19,9 +21,12 @@ class data {
     }
     
     func dataToArray (username:String, userpassword:String){
-        var arraydata = Dictionary<String, String>()
+        
+        arraydata[username]=userpassword
+        println("data : \(arraydata)")
         
     }
+    
     
     
     
