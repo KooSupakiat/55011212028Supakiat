@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController,UITableViewDataSource {
     
-    var item = [String]()
+    var items = [NSManagedObject]() /*จะใช้ได้ต้อง import CoreData*/
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,8 +23,9 @@ class ViewController: UIViewController,UITableViewDataSource {
         let saveAction = UIAlertAction(title: "Save", style: .Default){
             (action: UIAlertAction!) -> Void in
                 let textField = alert.textFields![0] as UITextField
-                self.item.append(textField.text)
-            self.tableView.reloadData()
+            
+                self.saveName(textField.text)
+                self.tableView.reloadData()
         }
         //สร้างปุ่ม cancel ในAlert
         let cancelAcion = UIAlertAction(title: "Cancel", style: .Default){
@@ -43,6 +45,41 @@ class ViewController: UIViewController,UITableViewDataSource {
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    func saveName(name: String){
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext!
+        
+        let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: managedContext)
+        
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        item.setValue(name, forKey: "name")
+        
+        var error:NSError?
+        if !managedContext.save(&error){
+            print("Cloud not savee \(error),\(error?.userInfo)")
+        }
+        items.append(item)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        let fetchRequest=NSFetchRequest(entityName:"Item")
+        var error: NSError?
+        
+        let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        
+        if let results = fetchResults{
+            items = results
+        }else {
+            print("Cloud not savee \(error),\(error?.userInfo)")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "\"Shopping List\""
@@ -55,11 +92,15 @@ class ViewController: UIViewController,UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return item.count
+        return items.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
-        cell.textLabel!.text = item[indexPath.row]
+        
+        let item = items[indexPath.row]
+        
+        cell.textLabel!.text = item.valueForKey("name") as String?
+        
         return cell
     }
 
