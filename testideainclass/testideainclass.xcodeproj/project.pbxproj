@@ -14,6 +14,7 @@
 		3F3B824119FA2A1A0066D2EE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F3B823F19FA2A1A0066D2EE /* LaunchScreen.xib */; };
 		3F3B824D19FA2A1A0066D2EE /* testideainclassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B824C19FA2A1A0066D2EE /* testideainclassTests.swift */; };
 		3F3B825719FA39140066D2EE /* colorful-flower-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F3B825619FA39140066D2EE /* colorful-flower-background.jpg */; };
+		3F6DE12D1A0369CE00E8CE16 /* coreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F6DE12B1A0369CE00E8CE16 /* coreDataTest.xcdatamodeld */; };
 		3FC2BA0419FA4031009D5144 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2BA0319FA4031009D5144 /* RegisterController.swift */; };
 		3FC2BA0619FA5E8E009D5144 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC2BA0519FA5E8E009D5144 /* data.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		3F3B824B19FA2A1A0066D2EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F3B824C19FA2A1A0066D2EE /* testideainclassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testideainclassTests.swift; sourceTree = "<group>"; };
 		3F3B825619FA39140066D2EE /* colorful-flower-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "colorful-flower-background.jpg"; sourceTree = "<group>"; };
+		3F6DE12C1A0369CE00E8CE16 /* coreDataTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coreDataTest.xcdatamodel; sourceTree = "<group>"; };
 		3FC2BA0319FA4031009D5144 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		3FC2BA0519FA5E8E009D5144 /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				3F3B823619FA2A1A0066D2EE /* AppDelegate.swift */,
+				3F6DE12B1A0369CE00E8CE16 /* coreDataTest.xcdatamodeld */,
 				3F3B823819FA2A1A0066D2EE /* ViewController.swift */,
 				3F3B823A19FA2A1A0066D2EE /* Main.storyboard */,
 				3F3B823D19FA2A1A0066D2EE /* Images.xcassets */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6DE12D1A0369CE00E8CE16 /* coreDataTest.xcdatamodeld in Sources */,
 				3F3B823919FA2A1A0066D2EE /* ViewController.swift in Sources */,
 				3F3B823719FA2A1A0066D2EE /* AppDelegate.swift in Sources */,
 				3FC2BA0419FA4031009D5144 /* RegisterController.swift in Sources */,
@@ -348,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = testideainclass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -358,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = testideainclass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -429,6 +435,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3F6DE12B1A0369CE00E8CE16 /* coreDataTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3F6DE12C1A0369CE00E8CE16 /* coreDataTest.xcdatamodel */,
+			);
+			currentVersion = 3F6DE12C1A0369CE00E8CE16 /* coreDataTest.xcdatamodel */;
+			path = coreDataTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3F3B822919FA2A1A0066D2EE /* Project object */;
 }
