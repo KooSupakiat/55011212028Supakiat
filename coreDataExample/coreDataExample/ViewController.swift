@@ -70,6 +70,7 @@ class ViewController: UIViewController,UITableViewDataSource {
             items.removeAll(keepCapacity: false)
             
             
+            
             tv.reloadData()
         }
         
@@ -113,6 +114,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         title = "\"Shopping List\""
         tableView.registerClass(UITableViewCell.self,forCellReuseIdentifier: "Cell")
