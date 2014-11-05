@@ -45,6 +45,38 @@ class ViewController: UIViewController,UITableViewDataSource {
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    
+    @IBAction func deletebut(sender: AnyObject) {
+        println("delete...................")
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context: NSManagedObjectContext = appDel.managedObjectContext!
+        
+        let request = NSFetchRequest(entityName: "Item")
+        
+        
+        context.executeFetchRequest(request, error: nil)
+        
+        
+        if let tv = tableView {
+            
+            var bas: NSManagedObject!
+            
+            
+            for bas: AnyObject in items
+            {
+                context.deleteObject(bas as NSManagedObject)
+            }
+            
+            items.removeAll(keepCapacity: false)
+            
+            
+            tv.reloadData()
+        }
+        
+        
+    }
+    
+    
     func saveName(name: String){
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         
@@ -103,6 +135,26 @@ class ViewController: UIViewController,UITableViewDataSource {
         
         return cell
     }
+    
+  /* override func tableView(tableView: UITableView?, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath?) {
+        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context:NSManagedObjectContext = appDel.managedObjectContext!
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            
+            if let tv = tableView{
+                context.deletedObjectseletedObjects(items[indexPath!.row] as NSManagedObjectContext)
+                items.removeAtIndex(indexPath!.row)
+                tv.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
+            }
+            
+            var error: NSError? = nil
+            if !context.save(&error){
+                abort()
+            }
+        }
+        
+    }*/
 
 
 }
