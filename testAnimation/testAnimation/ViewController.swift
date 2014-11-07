@@ -16,11 +16,12 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate{
     var gravity: UIGravityBehavior!
     var collision: UICollisionBehavior!
     var centersquare: CGPoint!
+    var count=0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        square = UIView(frame: CGRect(x: 200, y: 20, width: 50, height: 50))
+        square = UIView(frame: CGRect(x: 100, y: 20, width: 50, height: 50))
         square.backgroundColor = UIColor.grayColor()
         view.addSubview(square)
         
@@ -28,23 +29,35 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate{
         gravity = UIGravityBehavior(items: [square])
         animator.addBehavior(gravity)
         
-        let barrirer = UIView(frame: CGRect(x: 80, y: 300, width: 130, height: 20))
+        let barrirer = UIView(frame: CGRect(x: 50, y: 300, width: 130, height: 20))
+        let barrirer2 = UIView(frame: CGRect(x: 170, y: 450, width: 130, height: 20))
+        let barrirer3 = UIView(frame: CGRect(x: 200, y: 100, width: 20, height: 130))
+        
+        
         collision = UICollisionBehavior(items: [square])
         collision.translatesReferenceBoundsIntoBoundary = true
         animator.addBehavior(collision)
         
         barrirer.backgroundColor = UIColor.redColor()
-        view.addSubview(barrirer)
+        barrirer2.backgroundColor = UIColor.redColor()
+        barrirer3.backgroundColor = UIColor.redColor()
         
+        view.addSubview(barrirer)
+        view.addSubview(barrirer2)
+        view.addSubview(barrirer3)
         
         collision.addBoundaryWithIdentifier("barrier", forPath: UIBezierPath(rect: barrirer.frame))
-        collision.action = {
-            println("---\(NSStringFromCGAffineTransform(self.square.transform))\(NSStringFromCGPoint(self.square.center))-----")
-            
-
+        collision.addBoundaryWithIdentifier("barrier2", forPath: UIBezierPath(rect: barrirer2.frame))
+        collision.addBoundaryWithIdentifier("barrier3", forPath: UIBezierPath(rect: barrirer3.frame))
         
+        collision.action = {
+            /*println("---\(NSStringFromCGAffineTransform(self.square.transform))\(NSStringFromCGPoint(self.square.center))-----")*/
+            
+            
+            
         }
-        collision.collisionDelegate = self
+
+                collision.collisionDelegate = self
         
         let itemBehaviour = UIDynamicItemBehavior(items: [square])
         itemBehaviour.elasticity = 0.7
@@ -53,16 +66,20 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate{
     
     
     func collisionBehavior(behavior: UICollisionBehavior!, beganContactForItem item: UIDynamicItem!, withBoundaryIdentifier identifier: NSCopying!, atPoint p: CGPoint) {
-        println("Boundary contact occurred - \(identifier)")
+        var firstContact = false
+        
+        
+        /*println("Boundary contact occurred - \(identifier)")*/
+        
         
         let collidingView = item as UIView
-        collidingView.backgroundColor = UIColor.yellowColor()
-        UIView.animateWithDuration(2.0){
+        collidingView.backgroundColor = self.getRandomColor()
+        UIView.animateWithDuration(100.0){
             collidingView.backgroundColor = UIColor.grayColor()
             
         self.centersquare = self.square.center
             
-        var firstContact = false
+        
             if (!firstContact){
                 firstContact = true
             
@@ -80,6 +97,7 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate{
             }
         
         }
+        
     }
     
     
