@@ -20,6 +20,7 @@
 		3F428FD11A15DA400069CD35 /* torpedo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F428FCE1A15DA400069CD35 /* torpedo@2x.png */; };
 		3F428FD51A15DA6D0069CD35 /* bgmusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F428FD31A15DA6D0069CD35 /* bgmusic.mp3 */; };
 		3F428FD61A15DA6D0069CD35 /* torpedo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F428FD41A15DA6D0069CD35 /* torpedo.mp3 */; };
+		3F428FD81A15FDC70069CD35 /* LoveRunsOut.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F428FD71A15FDC70069CD35 /* LoveRunsOut.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		3F428FCE1A15DA400069CD35 /* torpedo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torpedo@2x.png"; sourceTree = "<group>"; };
 		3F428FD31A15DA6D0069CD35 /* bgmusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgmusic.mp3; sourceTree = "<group>"; };
 		3F428FD41A15DA6D0069CD35 /* torpedo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = torpedo.mp3; sourceTree = "<group>"; };
+		3F428FD71A15FDC70069CD35 /* LoveRunsOut.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LoveRunsOut.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		3F428FD21A15DA580069CD35 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				3F428FD71A15FDC70069CD35 /* LoveRunsOut.mp3 */,
 				3F428FD31A15DA6D0069CD35 /* bgmusic.mp3 */,
 				3F428FD41A15DA6D0069CD35 /* torpedo.mp3 */,
 			);
@@ -236,6 +239,7 @@
 				3F428FD11A15DA400069CD35 /* torpedo@2x.png in Resources */,
 				3F428FB31A15D8C00069CD35 /* Images.xcassets in Resources */,
 				3F428FAA1A15D8C00069CD35 /* GameScene.sks in Resources */,
+				3F428FD81A15FDC70069CD35 /* LoveRunsOut.mp3 in Resources */,
 				3F428FD61A15DA6D0069CD35 /* torpedo.mp3 in Resources */,
 				3F428FB11A15D8C00069CD35 /* Main.storyboard in Resources */,
 			);
