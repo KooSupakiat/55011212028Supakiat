@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ViewController: UIViewController,UICollisionBehaviorDelegate{
     
@@ -17,6 +18,17 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate{
     var collision: UICollisionBehavior!
     var centersquare: CGPoint!
     var count=0
+    
+    
+    //core motion
+    let motionManager = CMMotionManager()
+    let motionQueue = NSOperationQueue()
+    
+    
+    func coreMotion(){
+        motionManager.startDeviceMotionUpdatesToQueue(queue:NSOperationQueue, withHandler: CMMotionActivityHandler)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

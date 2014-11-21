@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F4CAD921A1F3C9200BAB8DC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4CAD911A1F3C9200BAB8DC /* CoreMotion.framework */; };
 		3F6F0A921A0C9E030028F784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F0A911A0C9E030028F784 /* AppDelegate.swift */; };
 		3F6F0A941A0C9E030028F784 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6F0A931A0C9E030028F784 /* ViewController.swift */; };
 		3F6F0A971A0C9E030028F784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F6F0A951A0C9E030028F784 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F4CAD911A1F3C9200BAB8DC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		3F6F0A8C1A0C9E030028F784 /* testAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6F0A901A0C9E030028F784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F6F0A911A0C9E030028F784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4CAD921A1F3C9200BAB8DC /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +62,7 @@
 		3F6F0A831A0C9E030028F784 = {
 			isa = PBXGroup;
 			children = (
+				3F4CAD911A1F3C9200BAB8DC /* CoreMotion.framework */,
 				3F6F0A8E1A0C9E030028F784 /* testAnimation */,
 				3F6F0AA41A0C9E030028F784 /* testAnimationTests */,
 				3F6F0A8D1A0C9E030028F784 /* Products */,
@@ -405,6 +409,7 @@
 				3F6F0AAD1A0C9E030028F784 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F6F0AAE1A0C9E030028F784 /* Build configuration list for PBXNativeTarget "testAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				3F6F0AB01A0C9E030028F784 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
