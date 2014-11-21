@@ -40,8 +40,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 
     
     
-    func coreAudio(){
-        var url1 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("LoveRunsOut", ofType: "mp3")!)
+    func coreAudio(link:NSString){
+        var url1 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(link, ofType: "mp3")!)
         var error: NSError?
         
         audioPlayer = AVAudioPlayer(contentsOfURL: url1, error: &error)
@@ -51,7 +51,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     override func viewDidLoad() {
-        coreAudio()
+        coreAudio("LoveRunsOut")
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         
@@ -85,16 +85,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     //UITableViewDalegate methods
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        
-        let alert = UIAlertController(title: "Item selected", message: "You selected item \(tableData[indexPath.row])", preferredStyle: UIAlertControllerStyle.Alert)
+        /*let alert = UIAlertController(title: "Item selected", message: "You selected item \(tableData[indexPath.row])", preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "OK",style: UIAlertActionStyle.Default, handler:{ (alert: UIAlertAction!) in println("An alert of type \(alert.style.hashValue) was tapped")
         }))
-        self.presentViewController(alert, animated:  true, completion: nil)
-    }
+        self.presentViewController(alert, animated:  true, completion: nil)*/
+        
+        
+        coreAudio(tableData[indexPath.row])
+    
 
-    
-    
-   
+        
+        
+    }
+        
+  
 }
 

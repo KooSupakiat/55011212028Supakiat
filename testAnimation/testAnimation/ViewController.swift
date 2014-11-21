@@ -26,7 +26,7 @@ class ViewController: UIViewController,UICollisionBehaviorDelegate{
     
     
     func coreMotion(){
-        motionManager.startDeviceMotionUpdatesToQueue(queue:NSOperationQueue, withHandler: CMMotionActivityHandler)
+        //motionManager.startDeviceMotionUpdatesToQueue(queue:NSOperationQueue, withHandler: CMMotionActivityHandler)
     }
     
     
