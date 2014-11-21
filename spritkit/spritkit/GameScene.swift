@@ -106,17 +106,69 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     
-
-    
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        self.runAction(SKAction.playSoundFileNamed("torpedo.mp3", waitForCompletion: false))
         
+        var touch:UITouch = touches.anyObject() as UITouch
+        var location:CGPoint = touch.locationInNode(self)
         
-        for touch: AnyObject in touches {
-          addAlien()
+        var torpedo:SKSpriteNode = SKSpriteNode(imageNamed: "torpedo")
+        torpedo.position = player.position
+        
+        torpedo.physicsBody = SKPhysicsBody(circleOfRadius: torpedo.size.width)
+        torpedo.physicsBody?.dynamic = true
+        torpedo.physicsBody?.categoryBitMask = phottonTorpedoCategory
+        torpedo.physicsBody?.contactTestBitMask = alienCategory
+        torpedo.physicsBody?.collisionBitMask = 0
+        torpedo.physicsBody?.usesPreciseCollisionDetection = true
+        
+        var offset:CGPoint = vecSub(location, b: torpedo.position)
+        
+        if (offset.y <  0){
+            return
         }
-    }
         
-    
-   
+        self.addChild(torpedo)
+        
+        var direction:CGPoint = vecNormalize(offset)
+        
+        var shotLength:CGPoint = vecMult(direction, b: 1000)
+        
+        var finalDestination:CGPoint =vecAdd(shotLength, b: torpedo.position)
+        
+        let velocity = 568/1
+        let moveDuration:Float = Float(self.size.width) / Float(velocity)
+        
+        var actionArray:NSMutableArray = NSMutableArray()
+        actionArray.addObject(SKAction.moveTo(finalDestination, duration: NSTimeInterval(moveDuration)))
     }
+    
+    
+    
+    
+    func vecAdd(a:CGPoint, b:CGPoint)->CGPoint{
+        return CGPointMake(a.x + b.x, a.y + b.y)
+    }
+    
+    
+    func vecSub(a:CGPoint, b:CGPoint)->CGPoint{
+        return CGPointMake(a.x - b.x, a.y - b.y)
+    }
+    
+    func vecMult(a:CGPoint, b:CGFloat)->CGPoint{
+        return CGPointMake(a.x * b, a.y * b)
+    }
+
+    func veclength(a:CGPoint)->CGFloat{
+        return CGFloat(sqrt(CFloat(a.x)*CFloat(a.x)+CFloat(a.y)*CFloat(a.y)))
+    }
+    
+    func vecNormalize(a:CGPoint)->CGPoint{
+        var length:CGFloat = veclength(a)
+        return CGPointMake(a.x / length, a.y / length)
+    }
+    
+
+
+
+}
