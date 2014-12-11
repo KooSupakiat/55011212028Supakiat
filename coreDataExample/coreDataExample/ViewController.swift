@@ -12,6 +12,7 @@ import CoreData
 class ViewController: UIViewController,UITableViewDataSource {
     
     var items = [NSManagedObject]() /*จะใช้ได้ต้อง import CoreData*/
+    
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -48,6 +49,7 @@ class ViewController: UIViewController,UITableViewDataSource {
     
     @IBAction func deletebut(sender: AnyObject) {
         println("delete...................")
+        
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context: NSManagedObjectContext = appDel.managedObjectContext!
         
@@ -72,6 +74,7 @@ class ViewController: UIViewController,UITableViewDataSource {
             
             
             tv.reloadData()
+            context.save(nil)
         }
         
         
@@ -138,25 +141,27 @@ class ViewController: UIViewController,UITableViewDataSource {
         return cell
     }
     
-  /* override func tableView(tableView: UITableView?, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath?) {
-        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let context:NSManagedObjectContext = appDel.managedObjectContext!
+   /* func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        if editingStyle == UITableViewCellEditingStyle.Delete{
+        switch editingStyle {
+        case .Delete:
+            // remove the deleted item from the model
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let context:NSManagedObjectContext = appDel.managedObjectContext!
+            context.deleteObject(items[indexPath.row] as NSManagedObject)
+            items.removeAtIndex(indexPath.row)
+            context.save(nil)
             
-            if let tv = tableView{
-                context.deletedObjectseletedObjects(items[indexPath!.row] as NSManagedObjectContext)
-                items.removeAtIndex(indexPath!.row)
-                tv.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Fade)
-            }
+            //tableView.reloadData()
+            // remove the deleted item from the `UITableView`
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        default:
+            return
             
-            var error: NSError? = nil
-            if !context.save(&error){
-                abort()
-            }
         }
-        
     }*/
+    
+  
 
 
 }
