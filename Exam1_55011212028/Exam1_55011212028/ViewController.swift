@@ -205,7 +205,7 @@ class ViewController: UIViewController ,UITableViewDataSource , UITableViewDeleg
     }
     
     func numberOfSectionInTableView(tableView: UITableView!) -> Int{
-        return 1
+        return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -213,7 +213,7 @@ class ViewController: UIViewController ,UITableViewDataSource , UITableViewDeleg
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+       let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
         
         let item = items[indexPath.row]
         
@@ -225,12 +225,10 @@ class ViewController: UIViewController ,UITableViewDataSource , UITableViewDeleg
         cell.imageView!.image = imageName
         
         return cell
+        /*let CellID: NSString = "Cell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellID) as UITableViewCell
         
-        
-        /*var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
-        var item = items[indexPath.row]
-        
-        if item = indexPath as NS{
+        if let item = indexPath as NSIndexPath!{
         
             var data: NSManagedObject = items[item.row] as NSManagedObject
            cell.detailTextLabel?.text = data.valueForKeyPath("name") as? String
