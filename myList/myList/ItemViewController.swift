@@ -11,11 +11,12 @@ import CoreData
 
 class ItemViewController: UIViewController {
     
-    var items = [NSManagedObject]()
+    
 
     @IBOutlet var textFieldItem: UITextField!
     @IBOutlet var textFieldIQuanlity: UITextField!
     @IBOutlet var textFieldInfo: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,29 +26,25 @@ class ItemViewController: UIViewController {
     @IBAction func saveTapped(sender: AnyObject) {
         
     
-    
-    }
-    
-    func saveName(item: String, quanlity:String, info: String){
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        //
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        //
+        let contxt: NSManagedObjectContext = appDel.managedObjectContext!
+        let en = NSEntityDescription.entityForName("List", inManagedObjectContext: contxt)
         
-        let managedContext = appDelegate.managedObjectContext!
+        var newItem = Model(entity: en!, insertIntoManagedObjectContext: contxt)
         
-        let entity = NSEntityDescription.entityForName("List", inManagedObjectContext: managedContext)
+        newItem.item = textFieldItem.text
+        newItem.quanlity = textFieldIQuanlity.text
+        newItem.info = textFieldInfo.text
         
-        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        let quanlity = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        let info = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        //save our contxt
+        contxt.save(nil)
         
-        item.setValue(item, forKey: "item")
-        quanlity.setValue(item, forKey: "quanlity")
-        info.setValue(item, forKey: "info")
+        println(newItem)
         
-        var error:NSError?
-        if !managedContext.save(&error){
-            print("Cloud not savee \(error),\(error?.userInfo)")
-        }
-        items.append(item)
+        self.navigationController?.popToRootViewControllerAnimated(true)
+                
     }
     
     

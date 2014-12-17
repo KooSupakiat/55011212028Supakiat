@@ -7,36 +7,81 @@
 //
 
 import UIKit
+import CoreData
+
 
 class ListTableViewController: UITableViewController {
+    
+    var myList : Array<AnyObject> = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    override func viewDidAppear(animated: Bool) {
+        let appDel: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let contxt: NSManagedObjectContext = appDel.managedObjectContext!
+        let freq = NSFetchRequest(entityName: "List")
+        
+        myList =  contxt.executeFetchRequest(freq, error: nil)!
+        tableView.reloadData()
+        
+    }
+    
+    /*override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        let fetchRequest=NSFetchRequest(entityName:"List")
+        var error: NSError?
+        
+        let fetchResults = managedContext.executeFetchRequest(fetchRequest, error: &error) as [NSManagedObject]?
+        
+        if let results = fetchResults{
+            myList = results
+        }else {
+            print("Cloud not savee \(error),\(error?.userInfo)")
+        }
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
+    override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         return 0
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView?, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return myList.count
+    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+       
+        let CellID: NSString = "Cell"
+        
+        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(CellID) as UITableViewCell
+        
+        if let ip = indexPath as NSIndexPath!{
+            
+            var data: NSManagedObject = myList[ip.row] as NSManagedObject
+           cell.detailTextLabel?.text = data.valueForKeyPath("item") as? String
+            
+            var qnt = data.valueForKeyPath("qunality") as String
+            var inf = data.valueForKeyPath("info") as String
+            
+            cell.detailTextLabel?.text = "\(qnt) item/s - \(inf)"
+            
+        }
+        
+        
+        return cell
     }
 
     /*
